@@ -1,0 +1,314 @@
+/* StudyMatch styles */
+
+/* my colours */
+:root {
+  --coral: #ff6b4a;
+  --teal: #1fa89a;
+  --purple: #7b5cd6;
+  --mustard: #ffc93c;
+  --navy: #2b2d5b;
+  --cream: #fff6ea;
+  --grey: #6a6a7e;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--navy);
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* big coloured banner at the top */
+.banner {
+  background: linear-gradient(135deg, var(--coral), #ff9a5a 60%, var(--mustard));
+  text-align: center;
+  padding: 40px 20px 46px 20px;
+  border-bottom: 6px solid var(--navy);
+}
+
+.banner h1 {
+  margin: 0;
+  font-family: Caveat, cursive;
+  font-size: 64px;
+  color: #fff;
+  text-shadow: 3px 3px 0 var(--navy);
+}
+
+.banner .mark {
+  color: var(--navy);
+  text-shadow: none;
+}
+
+.banner p {
+  margin: 4px 0 0 0;
+  color: var(--navy);
+  font-size: 20px;
+}
+
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 18px 50px 18px;
+}
+
+h2 {
+  font-family: Caveat, cursive;
+  font-size: 34px;
+  margin: 0 0 4px 0;
+}
+
+.note {
+  color: var(--grey);
+  margin: 4px 0 22px 0;
+}
+
+/* white boxes with a coloured edge */
+.panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 26px;
+  box-shadow: 4px 5px 0 rgba(43, 45, 91, 0.15);
+}
+
+.form-panel {
+  border-top: 8px solid var(--teal);
+}
+
+.form-panel h2 {
+  color: var(--teal);
+}
+
+.match-panel {
+  border-top: 8px solid var(--purple);
+}
+
+.match-panel h2 {
+  color: var(--purple);
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 4px;
+  font-family: inherit;
+  font-size: 18px;
+  color: var(--navy);
+  background: #fff9ee;
+  border: 2px solid #e6d9c3;
+  border-radius: 10px;
+}
+
+input[type=text]:focus, select:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: #fff;
+}
+
+/* subject and time choices look like buttons you tick */
+.checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.checks label {
+  margin: 0;
+  padding: 8px 10px;
+  font-weight: normal;
+  background: #f1ecff;
+  border: 2px solid #ddd3fa;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.checks label:hover {
+  background: #e6defc;
+}
+
+.checks input {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+  accent-color: var(--purple);
+}
+
+button {
+  margin-top: 24px;
+  padding: 11px 26px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: var(--coral);
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 #c94a2e;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff7a5c;
+}
+
+.error {
+  color: #c0271c;
+  margin-top: 10px;
+  min-height: 24px;
+}
+
+.filters label {
+  display: inline-block;
+  margin: 6px 20px 12px 0;
+  font-weight: normal;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.empty {
+  color: var(--grey);
+}
+
+/* each match is a card, the top colour changes from card to card */
+.card {
+  background: #fffdf8;
+  border: 2px solid #eee3cf;
+  border-top: 7px solid var(--coral);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 18px 0;
+}
+
+#matchList .card:nth-child(4n+2) { border-top-color: var(--teal); }
+#matchList .card:nth-child(4n+3) { border-top-color: var(--purple); }
+#matchList .card:nth-child(4n+4) { border-top-color: var(--mustard); }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.who {
+  font-family: Caveat, cursive;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* the match percent is a small coloured badge */
+.percent {
+  background: var(--teal);
+  color: #fff;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.meta {
+  color: var(--grey);
+  font-size: 16px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 1px 10px;
+  background: #eceaf5;
+  border-radius: 14px;
+  font-size: 15px;
+}
+
+/* tags that you share are highlighted */
+.tag.shared {
+  background: var(--mustard);
+  font-weight: bold;
+}
+
+.card-links {
+  margin-top: 14px;
+}
+
+.card-links a {
+  display: inline-block;
+  margin: 0 12px 0 0;
+  padding: 6px 16px;
+  font-size: 16px;
+  color: #fff;
+  background: var(--navy);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.card-links button {
+  margin: 0;
+  padding: 4px 14px;
+  font-size: 16px;
+  color: var(--navy);
+  background: #fff;
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.card-links button:hover {
+  background: #f1ecff;
+}
+
+.footer {
+  text-align: center;
+  color: var(--grey);
+  font-size: 15px;
+}
+
+/* cute notebook picture in the banner */
+.banner svg {
+  width: 150px;
+  height: auto;
+  margin-bottom: 4px;
+}
+
+/* motivational quote box */
+.quote {
+  background: #fff1c2;
+  border: 3px dashed var(--coral);
+  border-radius: 16px;
+  padding: 18px 20px 16px 20px;
+  margin: 0 0 26px 0;
+  text-align: center;
+}
+
+.quote .big {
+  font-family: Caveat, cursive;
+  font-size: 34px;
+  line-height: 1.15;
+  color: var(--navy);
+  margin: 0;
+}
+
+.quote .label {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--coral);
+  font-weight: bold;
+}
+
+.quote button {
+  margin-top: 12px;
+  padding: 4px 16px;
+  font-size: 15px;
+  color: var(--navy);
+  background: #fff;
+  border: 2px solid var(--navy);
+  box-shadow: none;
+}
