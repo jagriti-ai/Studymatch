@@ -1,7 +1,7 @@
 # StudyMatch
 
 A web app that helps students find study partners who share their subjects, level, goal and free time.
-Made by Jagriti for the Orbix Hackathon.
+Made by Jagriti.
 
 ## What it does
 - You enter your subjects, level, what you are studying for, and when you are free.
