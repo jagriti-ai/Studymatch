@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyMatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="banner">
+    <svg viewBox="0 0 190 170" xmlns="http://www.w3.org/2000/svg" aria-label="cute notebook with a pencil">
+      <polygon points="22,30 26,40 37,41 29,48 31,59 22,53 13,59 15,48 7,41 18,40" fill="#ffc93c" stroke="#2b2d5b" stroke-width="2"/>
+      <path d="M170 28 C160 14 142 24 152 38 L160 48 L170 38 C178 30 176 24 170 28 Z" fill="#ff8fab" stroke="#2b2d5b" stroke-width="2.5"/>
+      <rect x="34" y="18" width="112" height="140" rx="12" fill="#1fa89a" stroke="#2b2d5b" stroke-width="4"/>
+      <rect x="40" y="26" width="100" height="124" rx="8" fill="#17917f"/>
+      <rect x="54" y="38" width="76" height="52" rx="9" fill="#fff6ea" stroke="#2b2d5b" stroke-width="3"/>
+      <circle cx="76" cy="58" r="3.5" fill="#2b2d5b"/>
+      <circle cx="108" cy="58" r="3.5" fill="#2b2d5b"/>
+      <path d="M83 67 Q92 77 101 67" fill="none" stroke="#2b2d5b" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="68" cy="68" rx="6" ry="4" fill="#ff8fab"/>
+      <ellipse cx="116" cy="68" rx="6" ry="4" fill="#ff8fab"/>
+      <text x="92" y="122" text-anchor="middle" font-family="Caveat, cursive" font-size="22" font-weight="bold" fill="#fff" textLength="74" lengthAdjust="spacingAndGlyphs">my notes</text>
+      <rect x="22" y="34" width="26" height="9" rx="4.5" fill="#fff" stroke="#2b2d5b" stroke-width="2.5"/>
+      <rect x="22" y="62" width="26" height="9" rx="4.5" fill="#fff" stroke="#2b2d5b" stroke-width="2.5"/>
+      <rect x="22" y="90" width="26" height="9" rx="4.5" fill="#fff" stroke="#2b2d5b" stroke-width="2.5"/>
+      <rect x="22" y="118" width="26" height="9" rx="4.5" fill="#fff" stroke="#2b2d5b" stroke-width="2.5"/>
+      <g transform="rotate(22 150 100)">
+        <rect x="143" y="52" width="16" height="12" rx="3" fill="#ff8fab" stroke="#2b2d5b" stroke-width="2.5"/>
+        <rect x="143" y="64" width="16" height="62" fill="#ffc93c" stroke="#2b2d5b" stroke-width="2.5"/>
+        <polygon points="143,126 159,126 151,146" fill="#f6d7a7" stroke="#2b2d5b" stroke-width="2.5"/>
+        <polygon points="147.5,138 154.5,138 151,146" fill="#2b2d5b"/>
+      </g>
+    </svg>
+    <h1>Study<span class="mark">Match</span></h1>
+    <p>Find someone who studies what you study, when you are free.</p>
+  </div>
+
+  <div class="page">
+
+    <div class="quote">
+      <p class="label">TODAY'S MOTIVATION</p>
+      <p class="big" id="quoteText"></p>
+      <button id="quoteBtn">another quote</button>
+    </div>
+
+    <p class="note">Hi, I'm <b>Jagriti</b>. I made this for the Orbix hackathon so students can stop studying alone and find someone who studies the same subject at the same time. (The students shown are sample data I made up for the demo.)</p>
+
+    <div class="panel form-panel">
+      <h2>About you</h2>
+
+      <label for="name">My name is</label>
+      <input type="text" id="name">
+
+      <label for="contact">You can reach me at (email, or WhatsApp number with country code)</label>
+      <input type="text" id="contact">
+
+      <label for="level">My level is</label>
+      <select id="level"></select>
+
+      <label for="goal">I am studying for</label>
+      <select id="goal"></select>
+
+      <label>Subjects I want a partner for</label>
+      <div class="checks" id="subjects"></div>
+
+      <label>I am free in the</label>
+      <div class="checks" id="slots"></div>
+
+      <button id="findBtn">Find my partners</button>
+      <div class="error" id="error"></div>
+    </div>
+
+    <div class="panel match-panel">
+      <h2>Your matches</h2>
+      <div class="filters">
+        <label><input type="checkbox" id="sameLevel"> same level only</label>
+        <label><input type="checkbox" id="sameTime"> same free time only</label>
+      </div>
+      <div id="matchList"><p class="empty">Nothing yet. Fill in the form above first.</p></div>
+    </div>
+
+    <p class="footer">StudyMatch - Orbix Hackathon prototype. Made by Jagriti.</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // quote box
+    var quotes = [
+      "Small steps every day still take you far.",
+      "You do not have to be perfect, you just have to start.",
+      "Study now, and future you will say thank you.",
+      "Hard work feels heavy today and proud tomorrow.",
+      "Learning with friends makes tough chapters easier."
+    ];
+    var quoteNumber = Math.floor(Math.random() * quotes.length);
+    function showQuote() {
+      document.getElementById("quoteText").textContent = quotes[quoteNumber];
+    }
+    document.getElementById("quoteBtn").onclick = function () {
+      quoteNumber = (quoteNumber + 1) % quotes.length;
+      showQuote();
+    };
+    showQuote();
+  </script>
+</body>
+</html>
